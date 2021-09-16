@@ -23,3 +23,12 @@ r = rem(a,b)는 a를 b로 나눈 후 나머지를 반환합니다.
 `subplot(m,n,p)`
 
 현재 Figure를 m×n 그리드로 나누고, p로 지정된 위치에 좌표축을 만듭니다
+
+`[피크 _ 값, 피크 _ 위치] = findpeaks (my_signal, 'minpeakheight', 2.5)`
+
+"minpeakheight"매개 변수를 사용하여 최소 높이의 피크를 검색합니다. 높이는 허용 가능한 피크의 최소 데이터 값을 나타내는 실수 값 스칼라입니다.
+
+`[피크 _ 값, 피크 _ 위치] = findpeaks (my_signal, 'minpeakdistance', 5);`
+
+"minpeakdistance"매개 변수를 사용하여 최소 거리로 분리 된 피크를 검색합니다. 값은 "my_signal"벡터에서 피크 사이의 최소 인덱스 수이며 정수여야합니다.
+

@@ -36,3 +36,26 @@ r = rem(a,b)는 a를 b로 나눈 후 나머지를 반환합니다.
 
 샘플 점 x와 해당 값 v로 이루어진 벡터에서 1차원 보간을 생성합니다
 
+`plot(signal_IMU_time(:,1), signal_IMU(:,imunum), 'k-', 'linew', 1.5)`
+
+=라인은 검은색 linew=linewidth로 라인 굵기는 1.5로 plot
+
+`plot(signal_IMU_time(maxpeak,1), signal_IMU(maxpeak,imunum),'gp','linew',1,'markersize',2,'markerfacecolor','b')`
+
+=gp는 마커포인트에 별모양표시, 마커색은 파란색
+
+`clearvars variables`
+
+변수가 전역적인 경우 clearvars는 현재 작업 공간에서만 해당 변수를 제거할 뿐, 그 변수를 전역 변수로 선언한 함수에서는 계속해서 액세스할 수 있도록 변수를 유지합니다.
+
+` fs = length(signal_IMU)/signal_IMU_time(end,1)`
+
+fs는 기울기=signal_IMU 요소의 개수/signal_IMU_time의 마지막항 1열(=마지막시간)
+
+`IMUterm(1,:) = 1:18:min(size(signal_IMU))`
+
+IMUterm의 1행 모든열을 1부터 min(size(signal_IMU))까지 18간격으로 나열
+
+`M = mean(A)`
+
+크기가 1이 아닌 첫 번째 배열 차원에서 A의 요소의 평균값을 반환합니다.
